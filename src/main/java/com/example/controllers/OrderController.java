@@ -67,7 +67,8 @@ public class OrderController {
 		if (order.getCoupon() != null) {
 			Coupon coupon = couponRepo.findById(order.getCoupon().getCode()).get();
 			coupon.setUsed(true);
-			couponRepo.save(coupon);
+			coupon = couponRepo.save(coupon);
+			order.setCoupon(coupon);
 		}
 		Order response = orderRepo.save(order);
 		for (OrderItem i : items) {
