@@ -6,6 +6,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -31,6 +32,7 @@ public class OrderController {
 	@Autowired
 	private CouponRepository couponRepo;
 	
+	@CrossOrigin(origins = "https://handsonfrontend.herokuapp.com")
 	@PostMapping("/postorder")
 	public Order postOrder(@RequestBody Order order) {
 

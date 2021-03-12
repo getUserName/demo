@@ -1,6 +1,7 @@
 package com.example.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -15,6 +16,7 @@ public class CouponController {
 	@Autowired
 	private CouponRepository repo;
 
+	@CrossOrigin(origins = "https://handsonfrontend.herokuapp.com")
 	@GetMapping("/validatecoupon")
 	@ResponseBody
 	public Coupon getCoupon(@RequestParam(value = "coupon") String code ){
