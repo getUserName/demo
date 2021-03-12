@@ -11,12 +11,12 @@ import com.example.persistence.entities.Coupon;
 import com.example.persistence.repos.CouponRepository;
 
 @RestController
+@CrossOrigin
 public class CouponController {
 
 	@Autowired
 	private CouponRepository repo;
 
-	@CrossOrigin(origins = "https://handsonfrontend.herokuapp.com")
 	@GetMapping("/validatecoupon")
 	@ResponseBody
 	public Coupon getCoupon(@RequestParam(value = "coupon") String code ){

@@ -21,6 +21,7 @@ import com.example.persistence.repos.OrderItemRepository;
 import com.example.persistence.repos.OrderRepository;
 
 @RestController
+@CrossOrigin
 public class OrderController {
 
 	@Autowired
@@ -32,7 +33,6 @@ public class OrderController {
 	@Autowired
 	private CouponRepository couponRepo;
 	
-	@CrossOrigin(origins = "https://handsonfrontend.herokuapp.com")
 	@PostMapping("/postorder")
 	public Order postOrder(@RequestBody Order order) {
 

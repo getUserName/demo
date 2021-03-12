@@ -14,19 +14,18 @@ import com.example.persistence.entities.MenuItem;
 import com.example.persistence.repos.MenuItemRepository;
 
 @RestController
+@CrossOrigin
 public class MenuItemController {
 	
 	@Autowired
 	private MenuItemRepository repo;
-	
-	@CrossOrigin(origins = "https://handsonfrontend.herokuapp.com")
+
 	@GetMapping("/itemsbycategory")
 	@ResponseBody
 	public Set<MenuItem> getItemsByCategory(@RequestParam(value = "category") String name) {
 		return repo.findByMenuCategoryName(name);
 	}
-	
-	@CrossOrigin(origins = "https://handsonfrontend.herokuapp.com")
+
 	@GetMapping("/menuitems")
 	@ResponseBody
 	public Set<MenuItem> getMenuItems() {

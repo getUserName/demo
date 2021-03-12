@@ -12,12 +12,12 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.persistence.repos.MenuCategoryRepository;
 
 @RestController
+@CrossOrigin
 public class MenuCategoryController {
 	
 	@Autowired
 	private MenuCategoryRepository repo;
-	
-	@CrossOrigin(origins = "https://handsonfrontend.herokuapp.com")
+
 	@GetMapping("/menucategories")
 	@ResponseBody
 	public Set<String> getCategories() {
